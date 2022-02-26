@@ -1,8 +1,8 @@
-CODINGTEST STUDY
-- Leetcode solving
+#### CODINGTEST STUDY
+- ### Leetcode solving
 
-    # list of solved problems 
+    ## list of solved problems 
 
-    DP:
-        198 - House Robber
-        213 - House Robber II
+    # DP:
+        > 1. 198 - House Robber
+        > 2. 213 - House Robber II
