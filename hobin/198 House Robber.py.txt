@@ -1,0 +1,7 @@
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        res = [0, 0]
+        for i in range(len(nums)):
+            best_num = max(nums[i]+res[i], nums[i]+res[i-1])
+            res.append(best_num)
+        return max(res[-1], res[-2])

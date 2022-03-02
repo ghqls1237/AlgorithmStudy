@@ -1,0 +1,21 @@
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        yes_one = [0]*(len(nums)+2)
+        no_one = [0]*(len(nums)+2)
+        
+        for i in range(len(nums)):
+            if i == len(nums)-1:
+                yes_one[i+2] = 0
+                no_one[i+2] = max(nums[i]+no_one[i], nums[i]+no_one[i-1])
+            elif i == 0:
+                yes_one[i+2] = nums[i]
+                no_one[i+2] = 0
+            elif i == 1: 
+                yes_one[i+2] = 0
+                no_one[i+2] = nums[i]
+            else:
+                no_one[i+2] = max(nums[i]+no_one[i], nums[i]+no_one[i-1])
+                yes_one[i+2] = max(nums[i]+yes_one[i], nums[i]+yes_one[i-1])
+        return max(no_one[-1], no_one[-2], yes_one[-2], yes_one[-3])
+            
+        
