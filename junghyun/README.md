@@ -10,5 +10,6 @@
         4. 1402 - Reducing dishes
     
     #### Binary Search:
-        1. 162 - Find Peak Element
-        2. 704 - Binary Search
+        1. 35  - Search Insert Position
+        2. 162 - Find Peak Element
+        3. 704 - Binary Search
