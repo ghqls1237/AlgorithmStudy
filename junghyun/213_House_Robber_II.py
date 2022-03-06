@@ -1,5 +1,5 @@
 class Solution:
-    def rob(self, nums: List[int]) -> int:
+    def rob(self, nums: list[int]) -> int:
         # 1 is rob 1st house, vise versa for 2
         # if 1, then rob among 2,3,...,n-2 th element
         # if 2, then rob among 1,2,..,n-1 th element
