@@ -1,5 +1,5 @@
 class Solution:
-    def rob(self, nums: List[int]) -> int:
+    def rob(self, nums: list[int]) -> int:
         # robmoney[i] = max robbed money until i th house
         robmoney = []
         length = len(nums)
