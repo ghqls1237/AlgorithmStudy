@@ -12,14 +12,17 @@ class Solution(object):
         # Time Complexity: O(log n) /   Runtime: faster than 11.24%
         # Space Complexity: O(1) /   Memory Usage: less than 44.44% 
 
-        # Lets say you have a mid number at index x, nums[x]
-        # if (num[x+1] > nums[x]), 
-        # that means a peak element HAS to exist on the right half of that array, 
-        # because (since every number is unique) 
-        # 1. the numbers keep increasing on the right side, and the peak will be the last element. 
-        # 2. the numbers stop increasing and there is a 'dip', or there exists somewhere a number such that nums[y] < nums[y-1], which means number[x] is a peak element.
+        '''
+        if an element(not the right-most one) is smaller than its right neighbor, 
+         then there must be a peak element on its right, because the elements on its right is either 
+           1. always increasing  -> the right-most element is the peak
+           2. always decreasing  -> the left-most element is the peak
+           3. first increasing then decreasing -> the pivot point is the peak
+           4. first decreasing then increasing -> the left-most element is the peak  
 
-
+           Therefore, we can find the peak only on its right elements( cut the array to half)
+        '''
+         
         n = len(nums)
         left, right = 0, n - 1
         
@@ -36,4 +39,20 @@ class Solution(object):
             else:
                 right = mid - 1
         
+
+        # ===================================
+        # Other's Solution
+        left, right = 0, len(nums) - 1
+        
+        while left <= right:
+            mid = (left + right) // 2
+           
+            if nums[mid] > nums[mid - 1] and nums[mid] > nums[mid + 1]:
+                return mid
+            
+            if nums[mid + 1] > nums[mid]:
+                left = mid + 1
+            else:
+                right = mid - 1
+
 
