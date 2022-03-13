@@ -42,6 +42,8 @@ class Solution(object):
 
         # ===================================
         # Other's Solution
+        # padding 주기
+
         left, right = 0, len(nums) - 1
         
         while left <= right:
