@@ -25,6 +25,7 @@ class Solution(object):
         province = 1
         visited = [False] * len(isConnected)
         start = 0
+
         
         while True:
             visited = dfs(start, isConnected[start], visited)
